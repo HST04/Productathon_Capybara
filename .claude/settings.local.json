@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /e/Productathon_Capybara -type f -name .env -o -name *.key -o -name *.pem -o -name *secret* -o -name *token*)"
+    ]
+  }
+}
