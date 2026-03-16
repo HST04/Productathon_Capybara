@@ -1,0 +1,53 @@
+.app-container {
+  min-height: 100vh;
+}
+
+.offline-banner,
+.slow-connection-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 12px 16px;
+  text-align: center;
+  font-size: 14px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.offline-banner {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.slow-connection-banner {
+  background-color: #ffd93d;
+  color: #333;
+}
+
+.offline-icon,
+.slow-icon {
+  font-size: 18px;
+}
+
+/* Low bandwidth mode optimizations */
+.low-bandwidth img {
+  filter: blur(2px);
+  transition: filter 0.3s;
+}
+
+.low-bandwidth img:hover {
+  filter: blur(0);
+}
+
+.low-bandwidth .non-critical {
+  display: none;
+}
+
+.low-bandwidth .lazy-load {
+  background-color: #f0f0f0;
+  min-height: 100px;
+}

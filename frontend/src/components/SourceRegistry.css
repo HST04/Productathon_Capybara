@@ -1,0 +1,212 @@
+.source-registry-container {
+  padding: 0 var(--spacing-md);
+}
+
+.source-registry-header {
+  margin-bottom: var(--spacing-xl);
+}
+
+.source-registry-header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.source-registry-description {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Sources Grid */
+.sources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+/* Source Card */
+.source-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  transition: all 0.2s;
+}
+
+.source-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.source-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.source-category {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.category-icon {
+  font-size: 1.25rem;
+}
+
+.category-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+/* Trust Tier Badge */
+.trust-tier {
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.trust-tier-high {
+  background-color: #e8f5e9;
+  color: var(--success);
+}
+
+.trust-tier-medium {
+  background-color: #fff3e0;
+  color: var(--warning);
+}
+
+.trust-tier-low {
+  background-color: #ffebee;
+  color: var(--error);
+}
+
+.trust-tier-neutral {
+  background-color: #e3f2fd;
+  color: var(--info);
+}
+
+/* Source Domain */
+.source-domain {
+  margin-bottom: var(--spacing-lg);
+}
+
+.source-domain a {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.source-domain a:hover {
+  text-decoration: underline;
+}
+
+/* Source Stats */
+.source-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+}
+
+.source-stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.source-stat label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+}
+
+.source-stat span {
+  font-size: 0.875rem;
+  color: var(--text-primary);
+}
+
+/* Trust Score Display */
+.trust-score-display {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.trust-score-bar-large {
+  flex: 1;
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.trust-score-fill-large {
+  height: 100%;
+  background: linear-gradient(90deg, var(--error), var(--warning), var(--success));
+  transition: width 0.3s ease;
+}
+
+.trust-score-number {
+  font-weight: 700;
+  color: var(--text-primary);
+  min-width: 30px;
+}
+
+/* Access Method Badge */
+.access-method-badge {
+  display: inline-block;
+  background-color: #e3f2fd;
+  color: var(--info);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Status Indicators */
+.status-allowed {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.status-blocked {
+  color: var(--error);
+  font-weight: 600;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .source-registry-container {
+    padding: 0 var(--spacing-sm);
+  }
+
+  .source-registry-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .sources-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .source-card {
+    padding: var(--spacing-md);
+  }
+
+  .source-stats {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+}

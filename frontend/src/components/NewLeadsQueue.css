@@ -1,0 +1,220 @@
+.new-leads-queue {
+  max-width: 100%;
+  padding: var(--spacing-md);
+}
+
+.queue-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--border);
+}
+
+.queue-header h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.queue-count {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Empty State */
+.empty-queue {
+  text-align: center;
+  padding: var(--spacing-xl) var(--spacing-md);
+  color: var(--text-secondary);
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: var(--spacing-md);
+  opacity: 0.3;
+}
+
+.empty-queue h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.empty-queue p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+/* Queue List */
+.queue-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+/* Queue Item */
+.queue-item {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--border);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.queue-item:active {
+  transform: scale(0.98);
+  box-shadow: var(--shadow-md);
+}
+
+.queue-item-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.queue-item-priority {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.queue-item-company {
+  flex: 1;
+  min-width: 0;
+}
+
+.company-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.company-industry {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.queue-item-time {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.queue-item-event {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  background-color: #f9f9f9;
+  border-radius: var(--radius-sm);
+}
+
+.queue-item-location {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.queue-item-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid var(--border);
+}
+
+.queue-item-score {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.queue-item-score strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.queue-item-arrow {
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+/* Swipe Animation */
+@keyframes swipeLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.queue-item.swiped {
+  animation: swipeLeft 0.3s ease-out forwards;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .new-leads-queue {
+    padding: var(--spacing-sm);
+  }
+
+  .queue-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .queue-item {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .queue-item-priority {
+    width: 32px;
+    height: 32px;
+    font-size: 0.875rem;
+  }
+
+  .company-name {
+    font-size: 1rem;
+  }
+
+  .queue-item-event {
+    font-size: 0.8125rem;
+  }
+}
+
+/* Touch-friendly tap targets */
+@media (hover: none) and (pointer: coarse) {
+  .queue-item {
+    min-height: 44px;
+  }
+}

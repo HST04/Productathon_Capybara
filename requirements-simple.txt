@@ -1,0 +1,31 @@
+# Core Web Framework
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+
+# Database
+sqlalchemy
+psycopg
+alembic
+
+# Vector Database
+pinecone
+
+# AI/ML
+google-generativeai
+sentence-transformers
+
+# Testing
+pytest
+pytest-cov
+hypothesis
+
+# HTTP and Parsing
+requests
+feedparser
+beautifulsoup4
+lxml
+
+# Utilities
+python-dotenv

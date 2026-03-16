@@ -1,0 +1,100 @@
+.sync-status-indicator {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.sync-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.sync-status.syncing {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.sync-status.pending {
+  background-color: #ffd93d;
+  color: #333;
+}
+
+.sync-status.success {
+  background-color: #6bcf7f;
+  color: white;
+}
+
+.sync-status.error {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.sync-icon {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.sync-icon.spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sync-button {
+  margin-left: 8px;
+  padding: 4px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.sync-button:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.sync-button:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .sync-status-indicator {
+    bottom: 80px;
+    right: 10px;
+    left: 10px;
+  }
+
+  .sync-status {
+    justify-content: center;
+  }
+}
